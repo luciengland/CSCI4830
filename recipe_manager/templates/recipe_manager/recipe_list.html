@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe Manager</title>
+    </head>
+
+    <body>
+        <h1>My Recipes</h1>
+
+        <a href="{% url 'add_recipe'%}">Add New Recipe</a>
+
+        <h2>Saved Recipes</h2>
+
+        {% for recipe in recipes %}
+            <h3>{{ recipe.name }}</h3>
+
+            <p>Category: {{ recipe.category }}</p>
+            <p>Cuisine: {{ recipe.cuisine }}</p>
+            <p>Ingredients: {{ recipe.ingredients }}</p>
+            <p>Instructions: {{ recipe.instructions }}</p>
+            <p>Time: {{ recipe.time_minutes }}</p>
+            <p>Notes: {{ recipe.notes }}</p>
+
+            <hr>
+        {% empty %}
+            <p>No recipes have been added yet.</p>
+        {% endfor %}
+    </body>
+</html>
+
