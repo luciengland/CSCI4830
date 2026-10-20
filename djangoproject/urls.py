@@ -20,7 +20,11 @@ from hello_world_app.views import hello
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    #   maps root URL to the 'hello' view
+
+    # maps root URL to the 'hello' view
     path('', hello), 
-    path('', include('hello_world_app.urls'))
+    path('', include('hello_world_app.urls')),
+
+    # maps recipe URLs to Recipe Manager
+    path('recipes/', include('recipe_manager.urls')),
 ]

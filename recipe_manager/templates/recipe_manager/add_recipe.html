@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Recipe</title>
+    </head>
+
+    <body>
+        <h1>Add New Recipe</h1>
+
+        <!-- create HTML form that submits entered info to Django view  -->
+        <form method="POST">
+            {% csrf_token %}    
+            {{ form.as_p }}
+
+            <button type="submit">Save Recipe</button>
+        </form>
+    </body>
+</html>
+
+
