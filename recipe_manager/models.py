@@ -7,7 +7,15 @@ class Recipe(models.Model):
     cuisine = models.CharField(max_length=100, blank=True)
     ingredients = models.TextField()
     instructions = models.TextField()
-    time_minutes = models.PositiveIntegerField()
+    time_commitment = models.CharField(
+        max_length=10,
+        choices=[
+            ('Quick', 'Quick'),
+            ('Average', 'Average'),
+            ('Long', 'Long'),
+        ],
+        default='Average'
+    )
     notes = models.TextField(blank=True)
 
     def __str__(self):

@@ -11,7 +11,7 @@ class RecipeForm(forms.ModelForm):
             'cuisine',
             'ingredients',
             'instructions',
-            'time_minutes',
+            'time_commitment',
             'notes',
         ]
 
