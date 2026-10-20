@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe Details</title>
+    </head>
+
+    <body>
+        <h1>{{ recipe.name }}</h1>
+
+        <p>Category: {{ recipe.category }}</p>
+        <p>Cuisine: {{ recipe.cuisine }}</p>
+        <p>Ingredients: {{ recipe.ingredients }}</p>
+        <p>Instructions: {{ recipe.instructions }}</p>
+        <p>Time Commitment: {{ recipe.time_commitment }}</p>
+        <p>Notes: {{ recipe.notes }}</p>
+
+        <a href="{% url 'recipe_list' %}">Back to Recipes</a>
+    </body>
+</html>
+

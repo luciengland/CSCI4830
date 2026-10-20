@@ -12,7 +12,9 @@
         <h2>Saved Recipes</h2>
 
         {% for recipe in recipes %}
-            <h3>{{ recipe.name }}</h3>
+            <h3>
+                <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a>
+            </h3>
 
             <p>Category: {{ recipe.category }}</p>
             <p>Cuisine: {{ recipe.cuisine }}</p>
