@@ -1,7 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Recipe Manager</title>
+        <!-- add style sheet -->
+        <link rel="stylesheet" href="{% static 'recipe_manager/style.css' %}">
     </head>
 
     <body>
@@ -14,9 +17,15 @@
             <button type="submit">Search</button>
         </form>
 
+        <!-- add clear search link -->
+        {% if query %}
+            <a href="{% url 'recipe_list' %}">Clear Search</a>
+        {% endif %}
+
         <h2>Saved Recipes</h2>
 
         {% for recipe in recipes %}
+        <div class="recipe-card"></div>
             <h3>
                 <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a>
             </h3>
@@ -29,8 +38,14 @@
             <p>Notes: {{ recipe.notes }}</p>
 
             <hr>
+        </div>
+        
         {% empty %}
-            <p>No recipes have been added yet.</p>
+            {% if query %}
+                <p>No recipes found matching "{{ query }}".</p>
+            {% else %}
+                <p>No recipes have been added yet.</p>
+            {% endif %}
         {% endfor %}
     </body>
 </html>
