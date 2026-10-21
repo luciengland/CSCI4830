@@ -15,7 +15,10 @@
         <p>Notes: {{ recipe.notes }}</p>
 
         <a href="{% url 'edit_recipe' recipe.id %}">Edit Recipe</a>
-        <a href="{% url 'recipe_list' %}">Back to Recipes</a>
+        <a href="{% url 'delete_recipe' recipe.id %}">Delete Recipe</a>
+        <p>
+            <a href="{% url 'recipe_list' %}">Back to Recipes</a>
+        </p>
     </body>
 </html>
 

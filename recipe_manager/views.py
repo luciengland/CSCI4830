@@ -42,3 +42,12 @@ def edit_recipe(request, recipe_id):
 
     return render(request, 'recipe_manager/edit_recipe.html', {'form': form, 'recipe':recipe})
 
+# delete existing recipe
+def delete_recipe(request, recipe_id):
+    recipe = get_object_or_404(Recipe, id=recipe_id)
+
+    if request.method == 'POST':
+        recipe.delete()
+        return redirect('recipe_list')
+
+    return render(request, 'recipe_manager/delete_recipe.html', {'recipe': recipe})
