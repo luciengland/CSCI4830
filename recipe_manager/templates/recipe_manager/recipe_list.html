@@ -10,35 +10,34 @@
     <body>
         <h1>My Recipes</h1>
 
-        <a href="{% url 'add_recipe'%}">Add New Recipe</a>
+        <a href="{% url 'add_recipe' %}" class="add-button">Add Recipe</a>
 
-        <form method="GET">
+        <form method="GET" class="search-form">
             <input type="text" name="q" placeholder="Search recipes" value="{{ query }}">
             <button type="submit">Search</button>
         </form>
 
         <!-- add clear search link -->
         {% if query %}
-            <a href="{% url 'recipe_list' %}">Clear Search</a>
+            <a href="{% url 'recipe_list' %}" class="clear-search">Clear Search</a>
         {% endif %}
 
         <h2>Saved Recipes</h2>
 
         {% for recipe in recipes %}
-        <div class="recipe-card"></div>
-            <h3>
-                <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a>
-            </h3>
+            <div class="recipe-card">
+                <h3>
+                    <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a>
+                </h3>
 
-            <p>Category: {{ recipe.category }}</p>
-            <p>Cuisine: {{ recipe.cuisine }}</p>
-            <p>Ingredients: {{ recipe.ingredients }}</p>
-            <p>Instructions: {{ recipe.instructions }}</p>
-            <p>Time Commitment: {{ recipe.time_commitment }}</p>
-            <p>Notes: {{ recipe.notes }}</p>
+                <p>Category: {{ recipe.category }}</p>
+                <p>Cuisine: {{ recipe.cuisine }}</p>
+                <p>Ingredients: {{ recipe.ingredients }}</p>
+                <p>Instructions: {{ recipe.instructions }}</p>
+                <p>Time Commitment: {{ recipe.time_commitment }}</p>
+                <p>Notes: {{ recipe.notes }}</p>
 
-            <hr>
-        </div>
+            </div>
         
         {% empty %}
             {% if query %}

@@ -1,22 +1,158 @@
 
 body {
-    background-color: #ebe9e6;
+    background-color: #F1F1F1;
     font-family: Arial, sans-serif;
     color: #000000;
     margin: 0;
     padding: 20px;
 }
 
+/* My Recipes */
 h1 {
-    color: #381616;
+    color: #0B4D3D;
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* "Saved Recipes" */
+h2 {
+    color: #0B4D3D;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------ recipe cards ----------------------------- */
+
+/* for each recipe */
 .recipe-card {
-    background-color: white;
-    border: 1px solid #381616;
-    border-radius: 8px;
+    background-color: #D2DDD8;
+    border: 3px solid #0B4D3D;
+    border-radius: 30px;
     padding: 20px;
     margin-bottom: 20px;
+}
+
+/* recipe name */
+.recipe-card h3 {
+    color: #0B4D3D;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* remove default underline */
+.recipe-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* hover over recipe name */
+.recipe-card h3 a:hover {
+    color: #00AB84;
+    text-decoration: underline;
+}
+
+.recipe-card p {
+    line-height:1.5;
+    margin: 10px 0;
+}
+
+/* ------------------------------ add button ------------------------------- */
+.add-button {
+    display: inline-block;
+    background-color: #0B4D3D;
+    color: #F1F1F1;
+    border: 3px solid #0B4D3D;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.add-button:hover {
+    background-color: #00AB84;
+}
+
+/* -------------------------- search input/button -------------------------- */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    padding: 10px;
+    border: 3px solid #0B4D3D;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.search-form button {
+    background-color: #0B4D3D;
+    color: #F1F1F1;
+    border: 3px solid #0B4D3D;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #00AB84;
+}
+
+/* -------------------------- clear search button -------------------------- */
+.clear-search {
+    display: inline-block;
+    color: #0B4D3D;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.clear-search:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------ edit button ------------------------------ */
+.edit-button {
+    display: inline-block;
+    background-color: #0B4D3D;
+    color: #F1F1F1;
+    border: 3px solid #0B4D3D;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.edit-button:hover {
+    background-color: #00AB84;
+}
+
+/* ----------------------------- delete button ----------------------------- */
+.delete-button {
+    display: inline-block;
+    background-color: #0B4D3D;
+    color: #F1F1F1;
+    border: 3px solid #0B4D3D;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.delete-button:hover {
+    background-color: #00AB84;
+}
+
+/* -------------------------- back to recipes link ------------------------- */
+.back-link {
+    display: inline-block;
+    color: #0B4D3D;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }

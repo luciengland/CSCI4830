@@ -1,24 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Recipe Details</title>
+        <!-- add style sheet -->
+        <link rel="stylesheet" href="{% static 'recipe_manager/style.css' %}">
     </head>
 
     <body>
         <h1>{{ recipe.name }}</h1>
 
-        <p>Category: {{ recipe.category }}</p>
-        <p>Cuisine: {{ recipe.cuisine }}</p>
-        <p>Ingredients: {{ recipe.ingredients }}</p>
-        <p>Instructions: {{ recipe.instructions }}</p>
-        <p>Time Commitment: {{ recipe.time_commitment }}</p>
-        <p>Notes: {{ recipe.notes }}</p>
-
-        <a href="{% url 'edit_recipe' recipe.id %}">Edit Recipe</a>
-        <a href="{% url 'delete_recipe' recipe.id %}">Delete Recipe</a>
-        <p>
-            <a href="{% url 'recipe_list' %}">Back to Recipes</a>
-        </p>
+        <div class="recipe-card">
+            <p>Category: {{ recipe.category }}</p>
+            <p>Cuisine: {{ recipe.cuisine }}</p>
+            <p>Ingredients: {{ recipe.ingredients }}</p>
+            <p>Instructions: {{ recipe.instructions }}</p>
+            <p>Time Commitment: {{ recipe.time_commitment }}</p>
+            <p>Notes: {{ recipe.notes }}</p>
+        </div>
+            <a href="{% url 'edit_recipe' recipe.id %}" class="edit-button">Edit Recipe</a>
+            <a href="{% url 'delete_recipe' recipe.id %}" class="delete-button">Delete Recipe</a>
+            <p>
+                <a href="{% url 'recipe_list' %}">Back to Recipes</a>
+            </p>
     </body>
 </html>
 
