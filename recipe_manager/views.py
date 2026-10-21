@@ -16,11 +16,19 @@ def add_recipe(request):
     # display HTML template containing form
     return render(request, 'recipe_manager/add_recipe.html', {'form': form})
 
-# display all saved recipes
+# display and search all saved recipes
 def recipe_list(request):
+    query = request.GET.get('q', '')
+
     recipes = Recipe.objects.all()
 
-    return render(request, 'recipe_manager/recipe_list.html', {'recipes': recipes})
+    if query:
+        recipes = recipes.filter(name__icontains=query)
+
+    return render(request, 'recipe_manager/recipe_list.html', {
+        'recipes': recipes,
+        'query': query
+    })
 
 # display specific recipe
 def recipe_detail(request, recipe_id):

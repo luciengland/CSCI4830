@@ -9,6 +9,11 @@
 
         <a href="{% url 'add_recipe'%}">Add New Recipe</a>
 
+        <form method="GET">
+            <input type="text" name="q" placeholder="Search recipes" value="{{ query }}">
+            <button type="submit">Search</button>
+        </form>
+
         <h2>Saved Recipes</h2>
 
         {% for recipe in recipes %}
