@@ -21,3 +21,6 @@ env/
 
 # SQLite database
 db.sqlite3
+
+# django collected static files
+/static/
