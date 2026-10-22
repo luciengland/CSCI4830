@@ -1,19 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Delete Recipe</title>
+        <!-- add style sheet -->
+        <link rel="stylesheet" href="{% static 'recipe_manager/style.css' %}">
     </head>
 
     <body>
         <h1>Delete Recipe</h1>
 
-        <p>Are you sure you want to delete "{{ recipe.name }}"?</p>
+        <div>
+            <p>Are you sure you want to delete "{{ recipe.name }}"?</p>
 
-        <form method="POST">
-            {% csrf_token %}    
-            <button type="submit">Delete Recipe</button>
-        </form>
+            <form method="POST">
+                {% csrf_token %}    
+                <button type="submit" class="delete-button">Delete Recipe</button>
+            </form>
 
-        <a href="{% url 'recipe_detail' recipe.id %}">Cancel</a>
+            <a href="{% url 'recipe_detail' recipe.id %}">Cancel</a>
+        </div>
     </body>
 </html>
