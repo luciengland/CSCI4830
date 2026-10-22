@@ -1,28 +1,22 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Recipe Manager</title>
-        <!-- add style sheet -->
-        <link rel="stylesheet" href="{% static 'recipe_manager/style.css' %}">
-    </head>
 
-    <body>
-        <h1>My Recipes</h1>
+{% extends 'recipe_manager/base.html' %}
 
-        <a href="{% url 'add_recipe' %}" class="add-button">Add Recipe</a>
+{% block title %}My Recipes{% endblock %}
 
-        <form method="GET" class="search-form">
-            <input type="text" name="q" placeholder="Search recipes" value="{{ query }}">
-            <button type="submit">Search</button>
-        </form>
+{% block content %}
+        <h1>Saved Recipes</h1>
+
+        <div class="recipe-toolbar">
+            <form method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Search recipes" value="{{ query }}">
+                <button type="submit">Search</button>
+            </form>
+        </div>
 
         <!-- add clear search link -->
         {% if query %}
             <a href="{% url 'recipe_list' %}" class="clear-search">Clear Search</a>
         {% endif %}
-
-        <h2>Saved Recipes</h2>
 
         {% for recipe in recipes %}
             <div class="recipe-card">
@@ -46,6 +40,4 @@
                 <p>No recipes have been added yet.</p>
             {% endif %}
         {% endfor %}
-    </body>
-</html>
-
+ {% endblock %}

@@ -3,8 +3,10 @@ body {
     background-color: #F1F1F1;
     font-family: Arial, sans-serif;
     color: #000000;
-    margin: 0;
+    margin: 0 auto;
     padding: 20px;
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 
 /* My Recipes */
@@ -21,6 +23,19 @@ h2 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+/* -------------------------------- tool bar ------------------------------- */
+.recipe-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.recipe-toolbar .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 /* ------------------------------ recipe cards ----------------------------- */
 
@@ -30,7 +45,9 @@ h2 {
     border: 3px solid #0B4D3D;
     border-radius: 30px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
 /* recipe name */
@@ -61,7 +78,7 @@ h2 {
 .add-button {
     display: inline-block;
     background-color: #0B4D3D;
-    color: #F1F1F1;
+    color: white;
     border: 3px solid #0B4D3D;
     padding: 10px 20px;
     border-radius: 8px;
@@ -89,7 +106,7 @@ h2 {
 
 .search-form button {
     background-color: #0B4D3D;
-    color: #F1F1F1;
+    color: white;
     border: 3px solid #0B4D3D;
     border-radius: 10px;
     padding: 10px 20px;
@@ -117,7 +134,7 @@ h2 {
 .edit-button {
     display: inline-block;
     background-color: #0B4D3D;
-    color: #F1F1F1;
+    color: white;
     border: 3px solid #0B4D3D;
     padding: 10px 20px;
     border-radius: 8px;
@@ -133,7 +150,7 @@ h2 {
 .delete-button {
     display: inline-block;
     background-color: #0B4D3D;
-    color: #F1F1F1;
+    color: white;
     border: 3px solid #0B4D3D;
     padding: 10px 20px;
     border-radius: 8px;
@@ -148,10 +165,12 @@ h2 {
 
 /* -------------------------- back to recipes link ------------------------- */
 .back-link {
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
     color: #0B4D3D;
     text-decoration: none;
-    margin-top: 10px;
+    font-weight: bold;
 }
 
 .back-link:hover {
@@ -166,6 +185,7 @@ h2 {
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;     /* center form horizontally */
+    box-sizing: border-box;
 }
 
 .recipe-form input,
@@ -191,7 +211,7 @@ h2 {
 
 .recipe-form button {
     background-color: #0B4D3D;
-    color: #F1F1F1;
+    color: white;
     border: 3px solid #0B4D3D;
     border-radius: 30px;
     padding: 10px 20px;
@@ -201,4 +221,60 @@ h2 {
 
 .recipe-form button:hover {
     background-color: #049154;
+}
+
+/* ------------------------------ recipe actions ------------------------------ */
+.recipe-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.recipe-actions .edit-button,
+.recipe-actions .delete-button {
+    margin-bottom: 0;
+}
+
+
+/* ------------------------------ navigation bar ------------------------------ */
+.navbar {
+    background-color: #0B4D3D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-links a:hover,
+.navbar-brand:hover {
+    color: #D2DDD8;
+}
+
+/* ------------------------- delete confirmation -------------------------- */
+.delete-confirmation {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.delete-confirmation p {
+    margin-bottom: 25px;
 }

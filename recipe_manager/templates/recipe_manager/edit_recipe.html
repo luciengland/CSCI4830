@@ -1,13 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Edit Recipe</title>
-        <!-- add style sheet -->
-        <link rel="stylesheet" href="{% static 'recipe_manager/style.css' %}">
-    </head>
 
-    <body>
+{% extends 'recipe_manager/base.html' %}
+
+{% block title %}Edit Recipe{% endblock %}
+
+{% block content %}
         <h1>Edit Recipe: {{ recipe.name }}</h1>
 
         <form method="POST" class="recipe-form">
@@ -17,5 +13,4 @@
         </form>
 
         <a href="{% url 'recipe_detail' recipe.id %}" class="back-link">Cancel</a>
-    </body>
-</html>
+{% endblock %}

@@ -1,16 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Delete Recipe</title>
-        <!-- add style sheet -->
-        <link rel="stylesheet" href="{% static 'recipe_manager/style.css' %}">
-    </head>
 
-    <body>
+{% extends 'recipe_manager/base.html' %}
+
+{% block title %}Delete Recipe{% endblock %}
+
+{% block content %}
         <h1>Delete Recipe</h1>
 
-        <div>
+        <div class="delete-confirmation">
             <p>Are you sure you want to delete "{{ recipe.name }}"?</p>
 
             <form method="POST">
@@ -18,7 +14,6 @@
                 <button type="submit" class="delete-button">Delete Recipe</button>
             </form>
 
-            <a href="{% url 'recipe_detail' recipe.id %}">Cancel</a>
+            <a href="{% url 'recipe_detail' recipe.id %}" class="back-link">Cancel</a>
         </div>
-    </body>
-</html>
+{% endblock %}
