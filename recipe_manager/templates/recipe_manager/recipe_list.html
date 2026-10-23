@@ -6,13 +6,6 @@
 {% block content %}
         <h1>Saved Recipes</h1>
 
-        <div class="recipe-toolbar">
-            <form method="GET" class="search-form">
-                <input type="text" name="q" placeholder="Search recipes" value="{{ query }}">
-                <button type="submit">Search</button>
-            </form>
-        </div>
-
         <!-- add clear search link -->
         {% if query %}
             <a href="{% url 'recipe_list' %}" class="clear-search">Clear Search</a>

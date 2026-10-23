@@ -8,10 +8,11 @@
 
     <body>
         <nav class="navbar">
-            <a href="{% url 'recipe_list' %}" class="navbar-brand">
-                Recipe Manager
-            </a>
-
+            <a href="{% url 'recipe_list' %}" class="navbar-brand">Recipe Manager</a>
+	    <form method="GET" action="{% url 'recipe_list' %}" class="search-form">
+       		 <input type="text" name="q" placeholder="Search recipes">
+	        <button type="submit">Search</button>
+	    </form>
             <div class="navbar-links">
                 <a href="{% url 'recipe_list' %}">My Recipes</a>
                 <a href="{% url 'add_recipe' %}">Add Recipe</a>
