@@ -59,6 +59,11 @@ h2 {
 .recipe-card p {
     line-height:1.5;
     margin: 10px 0;
+    white-space: pre-line;
+}
+
+.recipe-label {
+    font-weight: bold;
 }
 
 /* ------------------------- add/edit/delete button -------------------------- */

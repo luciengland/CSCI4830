@@ -16,14 +16,23 @@
                 <h3>
                     <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a>
                 </h3>
+		<p class="recipe-label">Category:</p>
+		<p>{{ recipe.category }}</p>
 
-                <p>Category: {{ recipe.category }}</p>
-                <p>Cuisine: {{ recipe.cuisine }}</p>
-                <p>Ingredients: {{ recipe.ingredients }}</p>
-                <p>Instructions: {{ recipe.instructions }}</p>
-                <p>Time Commitment: {{ recipe.time_commitment }}</p>
-                <p>Notes: {{ recipe.notes }}</p>
+		<p class="recipe-label">Cuisine:</p>
+		<p>{{ recipe.cuisine }}</p>
 
+		<p class="recipe-label">Ingredients:</p>
+		<p>{{ recipe.ingredients }}</p>
+
+		<p class="recipe-label">Instructions:</p>
+		<p>{{ recipe.instructions }}</p>
+
+		<p class="recipe-label">Time Commitment:</p>
+		<p>{{ recipe.time_commitment }}</p>
+
+		<p class="recipe-label">Notes:</p>
+		<p>{{ recipe.notes }}</p>
             </div>
         
         {% empty %}

@@ -7,12 +7,23 @@
         <h1>{{ recipe.name }}</h1>
 
         <div class="recipe-card">
-            <p>Category: {{ recipe.category }}</p>
-            <p>Cuisine: {{ recipe.cuisine }}</p>
-            <p>Ingredients: {{ recipe.ingredients }}</p>
-            <p>Instructions: {{ recipe.instructions }}</p>
-            <p>Time Commitment: {{ recipe.time_commitment }}</p>
-            <p>Notes: {{ recipe.notes }}</p>
+	    <p class="recipe-label">Category:</p>
+            <p>{{ recipe.category }}</p>
+
+            <p class="recipe-label">Cuisine:</p>
+            <p>{{ recipe.cuisine }}</p>
+
+            <p class="recipe-label">Ingredients:</p>
+            <p>{{ recipe.ingredients }}</p>
+
+            <p class="recipe-label">Instructions:</p>
+            <p>{{ recipe.instructions }}</p>
+
+            <p class="recipe-label">Time Commitment:</p>
+            <p>{{ recipe.time_commitment }}</p>
+
+            <p class="recipe-label">Notes:</p>
+            <p>{{ recipe.notes }}</p>
         </div>
         <div class="recipe-actions">
             <a href="{% url 'edit_recipe' recipe.id %}" class="edit-button">Edit Recipe</a>
